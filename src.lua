@@ -46,11 +46,54 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
    end,
 })
 
-local Button = scripts:CreateButton({
-   Name = "Server Browser",
-   Interact = 'Changable',
-   Callback = function()
-p
+local Slider = scripts:CreateSlider({
+   Name = "Walkspeed",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(v)
+game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = v   
+end,
+})
+
+local Slider = scripts:CreateSlider({
+   Name = "FOV",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 10,
+   Callback = function(fov)
+ game:GetService("Workspace").CurrentCamera.FieldOfView = fov 
+end,
+})
+
+local Toggle = scripts:CreateToggle({
+   Name = "Fly", -- The code in the callback semi literally came out of my ass :sob:
+   CurrentValue = false,
+   Callback = function(Value)
+        if value then
+
+            game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(character)
+                local humanoid = character:WaitForChild("Humanoid")
+                local fly = Instance.new("Fly")
+                fly.Name = "Fly"
+                fly.Parent = humanoid
+                humanoid:SetStateEnabled(Enum.HumanoidStateType.Flying, true)
+            end)
+        else
+
+            local fly = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fly")
+            if fly then
+                fly:Destroy()
    end,
 })
 
+local Button = scripts:CreateButton({
+   Name = "Destroy TPUI",
+   Interact = 'Changable',
+   Callback = function()
+Rayfield:Destroy()
+   end,
+})
