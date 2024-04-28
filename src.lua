@@ -1,4 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
+
 local Window = Rayfield:CreateWindow({
    Name = "PrismHub // v0.01a",
    LoadingTitle = "The Prism Universal Interface / TPUI",
@@ -14,7 +15,7 @@ local Window = Rayfield:CreateWindow({
       Title = "PrismHub",
       Subtitle = "You require an access key, this will need to be inserted everytime you load up TPUI. || SAVE IT IN A TXT FILE!",
       Note = "https://prismteam.vercel.app/",
-      FileName = "SiriusKey",
+      FileName = "key",
       SaveKey = false,
       GrabKeyFromSite = false, --[[If true put the raw text link]]
       Key = "flames" -- Reference to the OG branding.
@@ -46,10 +47,10 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 })
 
 local Button = scripts:CreateButton({
-   Name = "print test lawl",
+   Name = "Server Browser",
    Interact = 'Changable',
    Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() -- Infyield is the OG util bruv
+p
    end,
 })
 
