@@ -1,5 +1,12 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
+function rconsolekey()
+print("=========================================")
+print("PUBLIC ACCESS KEY: PRISMTEAMWINNING")
+print("=========================================")
+end
 
+rconsolekey()
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
 local Window = Rayfield:CreateWindow({
    Name = "PrismHub // v0.01a",
    LoadingTitle = "The Prism Universal Interface / TPUI",
@@ -13,40 +20,40 @@ local Window = Rayfield:CreateWindow({
    KeySystem = true,
    KeySettings = {
       Title = "PrismHub",
-      Subtitle = "You require an access key, this will need to be inserted everytime you load up TPUI. || SAVE IT IN A TXT FILE!",
-      Note = "https://prismteam.vercel.app/",
+      Subtitle = "Enter the Public Script Token",
+      Note = "check console for the key;)",
       FileName = "key",
       SaveKey = false,
       GrabKeyFromSite = false, --[[If true put the raw text link]]
-      Key = "flames" -- Reference to the OG branding.
+      Key = "PRISMTEAMWINNING" -- PUBLICSCRIPTTOKEN
    }
 })
 
-Rayfield:Notify({
-	Title = "Welcome to Prism!",
-	Content = "To get started input your access key.",
-	Duration = 6.5,
-	Actions = {
-		Ignore = {
-			Name = ">>",
-			Callback = function()
-print("PrismNotificationRes:Dismissed")
-			end
-		},
-	},
-})
-
+-- TABS:
+local uimanage = Window:CreateTab("ui")
 local scripts = Window:CreateTab("main")
+local chr = Window:CreateTab("character")
+
+local Button = uimanage:CreateButton({
+   Name = "Destroy TPUI",
+   Interact = 'Changable',
+   Callback = function()
+print("Shutting down TPUI.")
+wait(2)
+Rayfield:Destroy()
+   end,
+})
 
 local Button = scripts:CreateButton({
    Name = "Admin GUI",
    Interact = 'Changable',
    Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() -- Infyield is the OG util bruv
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+wait(3)
    end,
 })
 
-local Slider = scripts:CreateSlider({
+local Slider = chr:CreateSlider({
    Name = "Walkspeed",
    Range = {0, 100},
    Increment = 10,
@@ -58,7 +65,7 @@ game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").WalkSp
 end,
 })
 
-local Slider = scripts:CreateSlider({
+local Slider = chr:CreateSlider({
    Name = "FOV",
    Range = {0, 100},
    Increment = 10,
@@ -69,7 +76,7 @@ local Slider = scripts:CreateSlider({
 end,
 })
 
-local Toggle = scripts:CreateToggle({
+local Toggle = chr:CreateToggle({
    Name = "Fly", -- The code in the callback semi literally came out of my ass :sob:
    CurrentValue = false,
    Callback = function(Value)
@@ -87,13 +94,5 @@ local Toggle = scripts:CreateToggle({
             local fly = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fly")
             if fly then
                 fly:Destroy()
-   end,
-})
-
-local Button = scripts:CreateButton({
-   Name = "Destroy TPUI",
-   Interact = 'Changable',
-   Callback = function()
-Rayfield:Destroy()
    end,
 })
