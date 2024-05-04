@@ -1,14 +1,6 @@
-function rconsolekey()
-print("=========================================")
-print("PUBLIC ACCESS KEY: PRISMTEAMWINNING")
-print("=========================================")
-end
-
-rconsolekey()
-
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
 local Window = Rayfield:CreateWindow({
-   Name = "PrismHub // v0.01a",
+   Name = "PrismHub // v0.01b",
    LoadingTitle = "The Prism Universal Interface / TPUI",
    LoadingSubtitle = "Made with <3 by PrismTeam",
    ConfigurationSaving = {
@@ -21,25 +13,21 @@ local Window = Rayfield:CreateWindow({
    KeySettings = {
       Title = "PrismHub",
       Subtitle = "Enter the Public Script Token",
-      Note = "check console for the key;)",
+      Note = "dsc.gg/prismteam",
       FileName = "key",
       SaveKey = false,
-      GrabKeyFromSite = false, --[[If true put the raw text link]]
-      Key = "PRISMTEAMWINNING" -- PUBLICSCRIPTTOKEN
+      GrabKeyFromSite = false,
+      Key = "PRISMTEAMWINNING"
    }
 })
-
--- TABS:
 local uimanage = Window:CreateTab("ui")
 local scripts = Window:CreateTab("main")
 local chr = Window:CreateTab("character")
 
 local Button = uimanage:CreateButton({
-   Name = "Destroy TPUI",
+   Name = "Exit",
    Interact = 'Changable',
    Callback = function()
-print("Shutting down TPUI.")
-wait(2)
 Rayfield:Destroy()
    end,
 })
@@ -49,7 +37,14 @@ local Button = scripts:CreateButton({
    Interact = 'Changable',
    Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-wait(3)
+   end,
+})
+
+local Button = scripts:CreateButton({
+   Name = "ESP",
+   Interact = 'Changable',
+   Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/Modules/ESP.lua'))()
    end,
 })
 
