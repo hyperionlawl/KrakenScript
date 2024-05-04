@@ -1,6 +1,6 @@
 -- Window
 local PrismUI = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = PrismUI:MakeWindow({Name = "Orion Example", HidePremium = true, SaveConfig = true, ConfigFolder = "PrismTeam:PrismHub"})
+local Window = PrismUI:MakeWindow({Name = "Prism", HidePremium = true, SaveConfig = true, ConfigFolder = "PrismTeam:PrismHub"})
 -- Scripts Tab
 local ScriptsTab = Window:MakeTab({
 	Name = "Scripts",
