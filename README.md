@@ -1,6 +1,5 @@
-# PrismHub
-PrismHub, the best script hub on roblox
+# Prism Hub
 
 ```
-loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/src.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/GUI.lua'))()
 ```
