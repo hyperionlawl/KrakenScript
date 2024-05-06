@@ -2,7 +2,7 @@
 
 ## Loadstring V1
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/OrionGUI.lua"))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/OrionGUI.lua'))()
 ```
 ## Loadstring V2
 ```lua
