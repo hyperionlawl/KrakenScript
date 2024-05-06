@@ -2,8 +2,6 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 local Window = OrionLib:MakeWindow({Name = "CometHub", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
---Player Tab--
-
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
