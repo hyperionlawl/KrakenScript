@@ -1,4 +1,5 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/Rayfield/Releases/fixedsrc.lua'))()
+
 local Window = Rayfield:CreateWindow({
    Name = "PrismHub",
    LoadingTitle = "Beating the competition since 2024.",
