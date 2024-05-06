@@ -1,4 +1,4 @@
-local UILib = loadstring(game:HttpGet('https://raw.githubusercontent.com/StepBroFurious/Script/main/HydraHubUi.lua'))()
+local UILib = loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/LIB/hydralib.lua'))()
 local player = Players.LocalPlayer
 local Window = UILib.new("CometTest", player.Name, "Rank: User")
 local Category1 = Window:Category("Main", "http://www.roblox.com/asset/?id=8395621517")
