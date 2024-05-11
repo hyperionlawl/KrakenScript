@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local plr = game.Players.LocalPlayer
 local Window = Rayfield:CreateWindow({
-   Name = "CosmoGUI",
+   Name = "Cosmo.lol // ALPHA STAGE",
    LoadingTitle = "Beating the best.",
    LoadingSubtitle = "Last Updated: 11/5/24",
    ConfigurationSaving = {
@@ -100,19 +100,100 @@ character.Humanoid.JumpPower = value
    end,
 })
 
+local Button = PlayerPage:CreateButton({
+   Name = "Headless",
+   Callback = function()
+local lp = game:GetService "Players".LocalPlayer
+if lp.Character:FindFirstChild "Head" then
+    local char = lp.Character
+    char.Archivable = true
+    local new = char:Clone()
+    new.Parent = workspace
+    lp.Character = new
+    wait(2)
+    local oldhum = char:FindFirstChildWhichIsA "Humanoid"
+    local newhum = oldhum:Clone()
+    newhum.Parent = char
+    newhum.RequiresNeck = false
+    oldhum.Parent = nil
+    wait(2)
+    lp.Character = char
+    new:Destroy()
+    wait(1)
+    newhum:GetPropertyChangedSignal("Health"):Connect(
+        function()
+            if newhum.Health <= 0 then
+                oldhum.Parent = lp.Character
+                wait(1)
+                oldhum:Destroy()
+            end
+        end)
+    workspace.CurrentCamera.CameraSubject = char
+    if char:FindFirstChild "Animate" then
+        char.Animate.Disabled = true
+        wait(.1)
+        char.Animate.Disabled = false
+    end
+    lp.Character:FindFirstChild "Head":Destroy()
+end
+   end,
+})
+
 -- GAMES TAB: (MOST LINES)
 
 local Button = GamesPage:CreateButton({
    Name = "Arsenal",
    Callback = function()
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cris123452/my/main/cas",true))()
    end,
 })
 
 local Button = GamesPage:CreateButton({
-   Name = "Blox Fruits",
+   Name = "Blox Fruits | MAY HAVE KEY",
    Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Yatsuraa/Yuri/main/Winterhub_V2.lua"))()
+   end,
+})
 
+local Button = GamesPage:CreateButton({
+   Name = "Vortex DH",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ImagineProUser/vortexdahood/main/vortex", true))()
+   end,
+})
+
+local Button = GamesPage:CreateButton({
+   Name = "TOH | MAY HAVE KEY",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dqvh/dqvh/main/SprinHub",true))()
+   end,
+})
+
+local Button = GamesPage:CreateButton({
+   Name = "MM2",
+   Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/JE66c77Q')()
+   end,
+})
+
+local Button = GamesPage:CreateButton({
+   Name = "A dusty road trip",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/dusty/main/trip"))()
+   end,
+})
+
+local Button = GamesPage:CreateButton({
+   Name = "DOORS",
+   Callback = function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/9QPGnLx6'),true))()
+   end,
+})
+
+local Button = GamesPage:CreateButton({
+   Name = "DOORS",
+   Callback = function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/9QPGnLx6'),true))()
    end,
 })
 
