@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local plr = game.Players.LocalPlayer
 local Window = Rayfield:CreateWindow({
-    Name = "Cosmo.lol // ALPHA STAGE",
+    Name = "Cosmo.lol",
     LoadingTitle = "Beating the best.",
     LoadingSubtitle = "Last Updated: 11/5/24",
     ConfigurationSaving = {
@@ -16,9 +16,9 @@ local Window = Rayfield:CreateWindow({
     },
     KeySystem = true,
     KeySettings = {
-        Title = "CosmoGUI",
+        Title = "Cosmo.lol",
         Subtitle = "Keysystem",
-        Note = "Insert your Cosmatic Licence. You will need to complete the key system which can be found in dsc.gg/prismteam",
+        Note = "Insert the key found in dsc.gg/prismteam # . info !",
         FileName = "CosmoLicence",
         SaveKey = false,
         GrabKeyFromSite = true,
