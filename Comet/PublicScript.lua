@@ -50,22 +50,7 @@ local cosmoexec = {}
 cosmoexec.main = MainPage:CreateButton({
    Name = "cosmo beta executor GUI",
    Callback = function()
-       Rayfield:Notify({
-           Title = "Error",
-           Content = plr.Name .. " isn't whitelisted! Womp womp. 💀",
-           Duration = 6.5,
-           Image = 0,
-           Actions = { -- Notification Buttons
-               Ignore = {
-                   Name = "Okay!",
-                   Callback = function()
-                       plr:Kick("Bye bye ;)")
-                   end
-               },
-           },
-       })
-       wait(10)
-       plr:Kick("Bye bye ;)")
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/cosmotologyhahas/main/haha.lua'))()
    end,
 })
 
