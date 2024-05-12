@@ -197,5 +197,31 @@ loadstring(game:HttpGet(('https://pastebin.com/raw/9QPGnLx6'),true))()
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Bedwars",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Adopt Me",
+   Callback = function()
+if isfolder("IceHub") then
+	delfolder("IceHub")
+end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/AdoptMe/main/AdoptMe"))() -- Skips GameID check.
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Brookhaven RP",
+   Callback = function()
+if isfolder("IceHub") then
+	delfolder("IceHub")
+end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/Brookhaven/main/Brookhaven"))() -- Skips GameID check.
+   end,
+})
+
 -- ConfigurationSaving
 Rayfield:LoadConfiguration()
