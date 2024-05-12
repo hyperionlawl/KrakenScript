@@ -28,16 +28,8 @@ local Window = Rayfield:CreateWindow({
 local MainPage = Window:CreateTab(". quick access")
 local PlayerPage = Window:CreateTab(". player")
 local GamesPage = Window:CreateTab(". games")
-
+local External = Window:CreateTab(". visual")
 -- MAIN TAB
-local ESP = {}
-ESP.main = MainPage:CreateButton({
-    Name = "ESP",
-    Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/Modules/Visual/PrismESP.lua'))()
-    end,
-})
-
 local IY = {}
 IY.main = MainPage:CreateButton({
     Name = "IY",
@@ -187,6 +179,52 @@ local BrookhavenButton = GamesPage:CreateButton({
        loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/Brookhaven/main/Brookhaven"))() -- Skips GameID check.
    end,
 })
+-- Visuals
+local FOVSlider = External:CreateSlider({
+   Name = "FOV",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = " ",
+   CurrentValue = 10,
+   Flag = "FOVSlider",
+   Callback = function(value)
+local player = game.Players.LocalPlayer
+local camera = player.Camera
+camera.FieldOfView = value
+   end,
+})
+
+local ESP = {}
+ESP.external = External:CreateButton({
+    Name = "ESP",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/Modules/Visual/PrismESP.lua'))()
+    end,
+})
+
+local FOVCircle = {}
+FOV.external = External:CreateButton({
+    Name = "FOV Circle",
+    Callback = function()
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local fovCircle = Instance.new("Frame")
+fovCircle.Name = "FOVCircle"
+fovCircle.Size = UDim2.new(0, 3, 0, 3)
+fovCircle.BackgroundColor3 = Color3.new(1, 1, 1)
+fovCircle.BorderSizePixel = 3
+fovCircle.Parent = gui
+
+local function updateFOVCircle()
+    local mousePos = game:GetService("Players").LocalPlayer:GetMouse().X
+    fovCircle.Position = UDim2.new(0, mousePos, 0, game:GetService("Players").LocalPlayer:GetMouse().Y)
+end
+
+game:GetService("Players").LocalPlayer:GetMouse().Move:Connect(updateFOVCircle)
+    end,
+})
+
 -- ConfigurationSaving
 Rayfield:LoadConfiguration()
 -- Loaded Notif
