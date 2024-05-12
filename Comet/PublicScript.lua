@@ -22,7 +22,7 @@ local Window = Rayfield:CreateWindow({
         FileName = "CosmoLicence",
         SaveKey = false,
         GrabKeyFromSite = true,
-        Key = {""}
+        Key = {"cosmowinnink"}
     }
 })
 local MainPage = Window:CreateTab(". quick access")
