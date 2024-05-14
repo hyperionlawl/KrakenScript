@@ -1,13 +1,13 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local plr = game.Players.LocalPlayer
 local Window = Rayfield:CreateWindow({
-    Name = "Cosmo.lol",
+    Name = "NeptuneHaxx",
     LoadingTitle = "Beating the best.",
     LoadingSubtitle = "Last Updated: 11/5/24",
     ConfigurationSaving = {
         Enabled = true,
         FolderName = nil,
-        FileName = "CosmoGUI"
+        FileName = "NeptuneHaxx"
     },
     Discord = {
         Enabled = false,
@@ -16,13 +16,13 @@ local Window = Rayfield:CreateWindow({
     },
     KeySystem = true,
     KeySettings = {
-        Title = "Cosmo.lol",
+        Title = "Neptune",
         Subtitle = "Keysystem",
-        Note = "Insert the key found in dsc.gg/prismteam # . info !",
-        FileName = "CosmoLicence",
+        Note = "Insert The Public Key",
+        FileName = "NeptuneKey",
         SaveKey = false,
         GrabKeyFromSite = true,
-        Key = {"cosmowinnink"}
+        Key = {"NeptuneAndroid"}
     }
 })
 local MainPage = Window:CreateTab(". quick access")
@@ -229,13 +229,13 @@ game:GetService("Players").LocalPlayer:GetMouse().Move:Connect(updateFOVCircle)
 Rayfield:LoadConfiguration()
 -- Loaded Notif
        Rayfield:Notify({
-           Title = "COSMO:",
-           Content = "The script has been completely loaded! Press K to show and hide the GUI",
+           Title = "NeptuneHaxx",
+           Content = "The script has been completely loaded | K open/close",
            Duration = 6.5,
            Image = 0,
            Actions = { -- Notification Buttons
                Ignore = {
-                   Name = "Okay!",
+                   Name = "alr",
                    Callback = function()
                    end
                },
