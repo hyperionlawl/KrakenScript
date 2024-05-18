@@ -1,9 +1,10 @@
+local AccessKey = "AquaHubOpenBetaLol"
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local plr = game.Players.LocalPlayer
 local Window = Rayfield:CreateWindow({
-    Name = "NeptuneHaxx",
-    LoadingTitle = "Beating the best.",
-    LoadingSubtitle = "Last Updated: 11/5/24",
+    Name = "AquaHub",
+    LoadingTitle = "Unlimited Power.",
+    LoadingSubtitle = "Fetching assets from github..",
     ConfigurationSaving = {
         Enabled = true,
         FolderName = nil,
@@ -14,15 +15,15 @@ local Window = Rayfield:CreateWindow({
         Invite = "noinvitelink",
         RememberJoins = true
     },
-    KeySystem = true,
+    KeySystem = false,
     KeySettings = {
-        Title = "Neptune",
-        Subtitle = "Keysystem",
-        Note = "Insert The Public Key",
-        FileName = "NeptuneKey",
+        Title = "AquaHub",
+        Subtitle = "Access Point",
+        Note = "Insert The Public Key attached to the release note.",
+        FileName = "NotSaved",
         SaveKey = false,
         GrabKeyFromSite = true,
-        Key = {"NeptuneAndroid"}
+        Key = {AccessKey}
     }
 })
 local MainPage = Window:CreateTab(". quick access")
@@ -63,44 +64,6 @@ local JumpSlider = PlayerPage:CreateSlider({
        local player = game.Players.LocalPlayer
        local character = player.Character or player.CharacterAdded:Wait()
        character.Humanoid.JumpPower = value
-   end,
-})
-
-local HeadlessButton = PlayerPage:CreateButton({
-   Name = "Headless",
-   Callback = function()
-       local lp = game:GetService "Players".LocalPlayer
-       if lp.Character:FindFirstChild "Head" then
-           local char = lp.Character
-           char.Archivable = true
-           local new = char:Clone()
-           new.Parent = workspace
-           lp.Character = new
-           wait(2)
-           local oldhum = char:FindFirstChildWhichIsA "Humanoid"
-           local newhum = oldhum:Clone()
-           newhum.Parent = char
-           newhum.RequiresNeck = false
-           oldhum.Parent = nil
-           wait(2)
-           lp.Character = char
-           new:Destroy()
-           wait(1)
-           newhum:GetPropertyChangedSignal("Health"):Connect(function()
-               if newhum.Health <= 0 then
-                   oldhum.Parent = lp.Character
-                   wait(1)
-                   oldhum:Destroy()
-               end
-           end)
-           workspace.CurrentCamera.CameraSubject = char
-           if char:FindFirstChild "Animate" then
-               char.Animate.Disabled = true
-               wait(.1)
-               char.Animate.Disabled = false
-           end
-           lp.Character:FindFirstChild "Head":Destroy()
-       end
    end,
 })
 -- GAMES TAB: (MOST LINES)
@@ -202,26 +165,11 @@ ESP.external = External:CreateButton({
     end,
 })
 
-local FOVCircle = {}
-FOV.external = External:CreateButton({
-    Name = "FOV Circle",
+local External = {}
+AquaGUI.external = External:CreateButton({
+    Name = "Aqua.gg",
     Callback = function()
-local gui = Instance.new("ScreenGui")
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local fovCircle = Instance.new("Frame")
-fovCircle.Name = "FOVCircle"
-fovCircle.Size = UDim2.new(0, 3, 0, 3)
-fovCircle.BackgroundColor3 = Color3.new(1, 1, 1)
-fovCircle.BorderSizePixel = 3
-fovCircle.Parent = gui
-
-local function updateFOVCircle()
-    local mousePos = game:GetService("Players").LocalPlayer:GetMouse().X
-    fovCircle.Position = UDim2.new(0, mousePos, 0, game:GetService("Players").LocalPlayer:GetMouse().Y)
-end
-
-game:GetService("Players").LocalPlayer:GetMouse().Move:Connect(updateFOVCircle)
     end,
 })
 
@@ -229,13 +177,13 @@ game:GetService("Players").LocalPlayer:GetMouse().Move:Connect(updateFOVCircle)
 Rayfield:LoadConfiguration()
 -- Loaded Notif
        Rayfield:Notify({
-           Title = "NeptuneHaxx",
+           Title = "AquaHub",
            Content = "The script has been completely loaded | K open/close",
            Duration = 6.5,
            Image = 0,
            Actions = { -- Notification Buttons
                Ignore = {
-                   Name = "alr",
+                   Name = "#",
                    Callback = function()
                    end
                },
