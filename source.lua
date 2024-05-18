@@ -8,7 +8,7 @@ local Window = Rayfield:CreateWindow({
     ConfigurationSaving = {
         Enabled = true,
         FolderName = nil,
-        FileName = "NeptuneHaxx"
+        FileName = "AquaHub"
     },
     Discord = {
         Enabled = false,
