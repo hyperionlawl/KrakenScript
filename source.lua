@@ -167,19 +167,16 @@ ESP.external = ExternalTab:CreateButton({
 local ExecSkin = ExternalTab:CreateButton({
    Name = "Executor GUI",
    Callback = function()
-       if isfolder("IceHub") then
-           delfolder("IceHub")
-       end
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
 local guiFrame = Instance.new("Frame")
 guiFrame.Size = UDim2.new(0.4, 0, 0.4, 0)
-guiFrame.Position = UDim2.new(0.3, 0, 0.3, 0)
+guiFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+guiFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 guiFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 guiFrame.BorderSizePixel = 0
-guiFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 guiFrame.Parent = playerGui
 
 local frameCorner = Instance.new("UICorner")
@@ -253,7 +250,7 @@ local function executeScript()
     end)
     
     if not success then
-        warn("ERR:" .. errorMessage)
+        warn("Error executing script: " .. errorMessage)
     end
 end
 
