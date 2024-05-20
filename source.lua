@@ -1,25 +1,25 @@
-local AccessKey = "AquaHubOpenBetaLol"
+local AccessKey = "Krakening"
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local plr = game.Players.LocalPlayer
 local Window = Rayfield:CreateWindow({
-    Name = "AquaHub",
+    Name = "Kraken",
     LoadingTitle = "Unlimited Power.",
     LoadingSubtitle = "Fetching assets from github..",
     ConfigurationSaving = {
         Enabled = true,
         FolderName = nil,
-        FileName = "AquaHub"
+        FileName = "KrakenGUI"
     },
     Discord = {
         Enabled = false,
         Invite = "noinvitelink",
         RememberJoins = true
     },
-    KeySystem = false,
+    KeySystem = true,
     KeySettings = {
-        Title = "AquaHub",
+        Title = "Kraken",
         Subtitle = "Access Point",
-        Note = "Insert The Public Key attached to the release note.",
+        Note = "We winning",
         FileName = "NotSaved",
         SaveKey = false,
         GrabKeyFromSite = true,
@@ -29,7 +29,7 @@ local Window = Rayfield:CreateWindow({
 local MainPage = Window:CreateTab(". quick access")
 local PlayerPage = Window:CreateTab(". player")
 local GamesPage = Window:CreateTab(". games")
-local External = Window:CreateTab(". visual")
+local ExternalTab = Window:CreateTab(". visual")
 -- MAIN TAB
 local IY = {}
 IY.main = MainPage:CreateButton({
@@ -143,7 +143,7 @@ local BrookhavenButton = GamesPage:CreateButton({
    end,
 })
 -- Visuals
-local FOVSlider = External:CreateSlider({
+local FOVSlider = ExternalTab:CreateSlider({
    Name = "FOV",
    Range = {0, 100},
    Increment = 10,
@@ -151,41 +151,32 @@ local FOVSlider = External:CreateSlider({
    CurrentValue = 10,
    Flag = "FOVSlider",
    Callback = function(value)
-local player = game.Players.LocalPlayer
-local camera = player.Camera
-camera.FieldOfView = value
+       local camera = workspace.CurrentCamera
+       camera.FieldOfView = value
    end,
 })
 
 local ESP = {}
-ESP.external = External:CreateButton({
+ESP.external = ExternalTab:CreateButton({
     Name = "ESP",
     Callback = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/Modules/Visual/PrismESP.lua'))()
     end,
 })
 
-local External = {}
-AquaGUI.external = External:CreateButton({
-    Name = "Aqua.gg",
-    Callback = function()
-
-    end,
-})
-
 -- ConfigurationSaving
 Rayfield:LoadConfiguration()
 -- Loaded Notif
-       Rayfield:Notify({
-           Title = "AquaHub",
-           Content = "The script has been completely loaded | K open/close",
-           Duration = 6.5,
-           Image = 0,
-           Actions = { -- Notification Buttons
-               Ignore = {
-                   Name = "#",
-                   Callback = function()
-                   end
-               },
-           },
-       })
+Rayfield:Notify({
+   Title = "Kraken",
+   Content = "Welcome to the homewrecker project.",
+   Duration = 6.5,
+   Image = 0,
+   Actions = { -- Notification Buttons
+       Ignore = {
+           Name = "#",
+           Callback = function()
+           end
+       },
+   },
+})
