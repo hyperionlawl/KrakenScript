@@ -1,3 +1,3 @@
 ```
-loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/PrismHub/main/PublicScript.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/hyperionlawl/KrakenScript/main/source.lua'))()
 ```
